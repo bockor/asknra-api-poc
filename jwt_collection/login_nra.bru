@@ -1,0 +1,26 @@
+meta {
+  name: login_nra
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:5000/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "username": "nra",
+    "password": "1q2w3e4r"
+  }
+}
+
+script:post-response {
+  bru.setVar("jwt_token", res.body.token)
+}

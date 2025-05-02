@@ -1,0 +1,19 @@
+meta {
+  name: get_net_search_by_net
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:5000/api/net/search-net?network=2.0.0.0/8
+  body: none
+  auth: inherit
+}
+
+params:query {
+  network: 2.0.0.0/8
+}
+
+headers {
+  Authorization: {{jwt_token}}
+}
