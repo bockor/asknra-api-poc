@@ -1,6 +1,6 @@
-# AskNRA-API_Proof of Concept
+# AskNRA API Proof of Concept
 * */login* : client sends username and password in plain text in JSON format ({username:'name',password:'pass'}) (POST). If login is correct, the client receives the JWT token.
-* *//* : this route doesn't need credentials.
+* */* : this route doesn't need credentials.
 * */unprotected* : this route doesn't need credentials.
 * */nra-only*: Only logged user with "nra" rol can acces. Checks the request header named "Authorization" which contains the JWT token obtained after succes login.
 * */onlyusers*: Similar to previous route. Only "user" rol is accepted.
