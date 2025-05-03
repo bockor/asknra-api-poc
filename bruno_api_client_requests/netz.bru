@@ -1,0 +1,15 @@
+meta {
+  name: netz
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:5000/api/netz
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{jwt_token}}
+}

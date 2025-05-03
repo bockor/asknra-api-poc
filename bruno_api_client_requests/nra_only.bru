@@ -1,0 +1,15 @@
+meta {
+  name: nra_only
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:5000/nra-only
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: {{jwt_token}}
+}
