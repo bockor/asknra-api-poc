@@ -1,5 +1,5 @@
 # AskNRA API Proof of Concept
-## Conceptual REST API using Python Flask Web Application & JWT Authentication
+## Conceptual REST API using Python Flask Web Application & JWT Authentication / Authorization
 
 ### Working principle
 ![working principle pic](picz/working_principle.png)
