@@ -16,5 +16,5 @@ $ pip install -r requirements.txt
 $ python run.py
 ```
 4. The server should be accesible on http://localhost:5000/ 
-5. The file **app/db.py** contains user accounts and data in dictionaries and lists It is used like a database.
+5. The file **/app/db.py** contains user accounts and data in dictionaries and lists It is used like a database.
 6. Open the **/jwt_collection** folder in [Bruno API Client](https://www.usebruno.com/) to start testing the API.
