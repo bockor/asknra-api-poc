@@ -2,7 +2,7 @@
 ### Conceptual REST API using Python Flask Web Application & JWT Authentication
 
 ## Working principle
-![title][picz/working_principle.png]
+![title](picz/working_principle.png)
 
 ## Basic routes
 * */* : this route doesn't need credentials.
