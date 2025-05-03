@@ -18,4 +18,4 @@ $ python run.py
 4. The server should be accesible on http://localhost:5000/ 
 5. The file **/app/db.py** contains user accounts and data in dictionaries and lists It is used like a database.
 6. Open the **/jwt_collection** folder in [Bruno API Client](https://www.usebruno.com/) to start testing the API.
-7. Adjust the token expiration time parameter **JWT_EXPIRATION_TIME** to your needs in the **/app/security.py** file.
+7. Adjust the token expiration time **JWT_EXPIRATION_TIME** parameter to your needs in the **/app/security.py** file.
