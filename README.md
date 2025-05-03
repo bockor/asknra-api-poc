@@ -1,6 +1,9 @@
 # AskNRA API Proof of Concept
 ### Conceptual REST API using Python Flask Web Application & JWT Authentication
 
+## Working principle
+![title][picz/working_principle]
+
 ## Basic routes
 * */* : this route doesn't need credentials.
 * */login* : client sends username and password in plain text in JSON format ({username:'name',password:'pass'}) (POST). If login is correct, the client receives the JWT token.
@@ -41,3 +44,5 @@ security.login         POST     /login
 netz.add_netz          POST     /api/netz              
 sitez.add_sitez        POST     /api/sitez  
 ```
+
+[def]: picz/working_principle.png
