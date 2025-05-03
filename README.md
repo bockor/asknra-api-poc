@@ -1,5 +1,5 @@
 # AskNRA API Proof of Concept
-## Let's create a conceptual REST API using JWT Authentication 
+### Let's create a conceptual REST API using Python Flask Web Application & JWT Authentication 
 * */* : this route doesn't need credentials.
 * */login* : client sends username and password in plain text in JSON format ({username:'name',password:'pass'}) (POST). If login is correct, the client receives the JWT token.
 * */unsers-only* : this route doesn't need credentials.
