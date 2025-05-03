@@ -6,15 +6,8 @@ from app.db import netz
 
 bp = Blueprint('netz', __name__)
 
-"""
-netz = [
-    { 'id': 1, 'network': '1.0.0.0/8', 'comment': 'bla' },
-    { 'id': 2, 'network': '2.0.0.0/8', 'comment': 'blabla' },
-    { 'id': 3, 'network': '3.0.0.0/8', 'comment': 'blablabla' },
-]
-"""
 
-@bp.route('/net/<int:param>/',methods=['GET'])
+@bp.route('/net/<int:param>',methods=['GET'])
 @token_required('user')
 def get_net(param):
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
