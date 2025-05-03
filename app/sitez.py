@@ -7,7 +7,7 @@ from app.db import sitez
 bp = Blueprint('sitez', __name__)
 
 
-@bp.route('/site/<int:param>/',methods=['GET'])
+@bp.route('/site/<int:param>',methods=['GET'])
 def get_site(param):
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in sitez if sub['id'] == param), None)

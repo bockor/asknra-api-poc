@@ -19,3 +19,23 @@ $ python run.py
 5. The file **/app/db.py** contains user accounts and data in dictionaries and lists It is used like a database.
 6. Open the **/jwt_collection** folder in [Bruno API Client](https://www.usebruno.com/) to start testing the API.
 7. Adjust the token expiration time **JWT_EXPIRATION_TIME** parameter to your needs in the **/app/security.py** file.
+8. Default installed routes:
+```
+flask routes --sort methods
+
+Endpoint               Methods  Rule                   
+---------------------  -------  -----------------------
+static                 GET      /static/<path:filename>
+netz.get_net           GET      /api/net/<int:param>   
+netz.get_search_net    GET      /api/net/search-net    
+netz.get_netz          GET      /api/netz              
+sitez.get_site         GET      /api/site/<int:param>  
+sitez.get_search_site  GET      /api/site/search-site  
+sitez.get_netz         GET      /api/sitez             
+index                  GET      /                      
+onlyadmins             GET      /nra-only              
+onlyusers              GET      /onlyusers             
+security.login         POST     /login                 
+netz.add_netz          POST     /api/netz              
+sitez.add_sitez        POST     /api/sitez   
+```
