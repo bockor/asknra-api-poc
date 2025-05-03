@@ -7,7 +7,7 @@ from datetime import datetime, timezone, timedelta
 
 
 bp = Blueprint('security', __name__)
-
+JWT_EXPIRATION_TIME = 1 # in minutes
 
 @bp.route('/login', methods=["POST"])
 def login():
@@ -26,8 +26,8 @@ def login():
 
     if error is None:
         payload = {
-            'iat': datetime.now(timezone.utc),                          # Current time
-            'exp': datetime.now(timezone.utc) + timedelta(minutes=1),  # Expiration time
+            'iat': datetime.now(timezone.utc),
+            'exp': datetime.now(timezone.utc) + timedelta(minutes=JWT_EXPIRATION_TIME),
             'sub': user['name'],
             'rol': user['rol']
         }
