@@ -24,7 +24,7 @@ def create_app():
     def onlyadmins():
         return 'Only NRA route'
 
-    @app.route('/onlyusers')
+    @app.route('/users-only')
     @token_required('user')
     def onlyusers():
         return 'Only users route'
