@@ -15,6 +15,7 @@ $ pip install -r requirements.txt
 ```
 $ python run.py
 ```
-4. The file **app/db.py** contains users info in a dictionary. It is used like a database.
+Access the server on [](http://localhost:5000/)
+4. The file **app/db.py** contains info in a dictionary. It is used like a database.
 5. Use some software like Bruno, postman, insomnia or others REST clients to test the API.
 6. Open the */jwt_collection* folder in [Bruno API Client](https://www.usebruno.com/) to explore some API URI's.
