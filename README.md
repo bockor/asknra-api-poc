@@ -27,21 +27,21 @@ $ python run.py
 
 ### All Exposed API endpoints (resources)
 ```
-flask routes --sort methods
+flask routes --sort rule
 
 Endpoint               Methods  Rule                   
 ---------------------  -------  -----------------------
-static                 GET      /static/<path:filename>
+index                  GET      /                      
 netz.get_net           GET      /api/net/<int:param>   
 netz.get_search_net    GET      /api/net/search-net    
 netz.get_netz          GET      /api/netz              
+netz.add_netz          POST     /api/netz              
 sitez.get_site         GET      /api/site/<int:param>  
 sitez.get_search_site  GET      /api/site/search-site  
 sitez.get_netz         GET      /api/sitez             
-index                  GET      /                      
-onlyadmins             GET      /nra-only              
-onlyusers              GET      /users-only            
+sitez.add_sitez        POST     /api/sitez             
 security.login         POST     /auth/login            
-netz.add_netz          POST     /api/netz              
-sitez.add_sitez        POST     /api/sitez 
+onlyadmins             GET      /nra-only              
+static                 GET      /static/<path:filename>
+onlyusers              GET      /users-only
 ```
