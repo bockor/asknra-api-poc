@@ -4,12 +4,6 @@
 ### Working principle
 ![working principle pic](picz/working_principle.png)
 
-### Basic routes
-* */* : this route doesn't need credentials.
-* */login* : client sends username and password in plain text in JSON format ({username:'name',password:'pass'}) (POST). If login is correct, the client receives the JWT token.
-* */nra-only*: Only logged user with "nra" rol can acces. Checks the request header named "Authorization" which contains the JWT token obtained after succes login.
-* */users-only*: Similar to previous route. Only "user" rol is accepted.
-
 ### How to use
 1. Clone or download this repository
 2. Install the dependencies:
@@ -24,7 +18,14 @@ $ python run.py
 5. The file **/app/db.py** contains user accounts and data in dictionaries and lists It is used like a database.
 6. Open the **/bruno_api_client_requests** folder in [Bruno API Client](https://www.usebruno.com/) to start testing the API.
 7. Adjust the token expiration time **JWT_EXPIRATION_TIME** parameter to your needs in the **/app/security.py** file.
-8. Default installed routes:
+
+### Generic endpoints
+* */* : this route doesn't need credentials.
+* */login* : client sends username and password in plain text in JSON format ({username:'name',password:'pass'}) (POST). If login is correct, the client receives the JWT token.
+* */nra-only*: Only logged user with "nra" rol can acces. Checks the request header named "Authorization" which contains the JWT token obtained after succes login.
+* */users-only*: Similar to previous route. Only "user" rol is accepted.
+
+### All Exposed API endpoints (resources)
 ```
 flask routes --sort methods
 
@@ -40,7 +41,7 @@ sitez.get_netz         GET      /api/sitez
 index                  GET      /                      
 onlyadmins             GET      /nra-only              
 onlyusers              GET      /users-only            
-security.login         POST     /login                 
+security.login         POST     /auth/login            
 netz.add_netz          POST     /api/netz              
-sitez.add_sitez        POST     /api/sitez  
+sitez.add_sitez        POST     /api/sitez 
 ```

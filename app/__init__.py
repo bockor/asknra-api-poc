@@ -7,7 +7,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'mysecretkey'
 
     from . import security
-    app.register_blueprint(security.bp)
+    app.register_blueprint(security.bp, url_prefix='/auth')
 
     from . import netz
     app.register_blueprint(netz.bp, url_prefix='/api')
