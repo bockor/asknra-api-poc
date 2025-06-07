@@ -12,10 +12,9 @@ def get_site(param):
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in sitez if sub['id'] == param), None)
 	if res: 
-		return jsonify({"version": version,
-				        "result": res})
+		return jsonify({"version": version, "result": res})
 	else:
-		return jsonify({"result": "Nothing here"}), 404
+		return jsonify({"version": version, "result": "Nothing here"}), 404
 
 
 @bp.route('/site/search-site',methods=['GET'])
@@ -25,18 +24,15 @@ def get_search_site():
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in sitez if sub['site'] == site), None)
 	if res: 
-		return jsonify({"version": version,
-						"result": res})
+		return jsonify({"version": version, "result": res})
 	else:
-		return jsonify({"version": version,
-						"result": "Nothing here"}), 404
+		return jsonify({"version": version, "result": "Nothing here"}), 404
 
 
 @bp.route('/sitez',methods=['GET'])
 @token_required('user')
 def get_netz():
-    return jsonify({"version": version,
-					"result":sitez})
+    return jsonify({"version": version, "result":sitez})
 
 @bp.route('/sitez', methods=['POST'])
 def add_sitez():
