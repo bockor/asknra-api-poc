@@ -2,7 +2,7 @@
 
 from flask import Flask, jsonify, request, Blueprint
 from app.security import token_required
-from app.db import netz
+from app.db import netz, version
 
 bp = Blueprint('netz', __name__)
 
@@ -13,9 +13,11 @@ def get_net(param):
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in netz if sub['id'] == param), None)
 	if res: 
-		return jsonify({"result": res})
+		return jsonify({"version": version,
+				        "result": res})
 	else:
-		return jsonify({"result": "Nothing here"}), 404
+		return jsonify({"version": version,
+				        "result": "Nothing here"}), 404
 
 
 @bp.route('/net/search-net',methods=['GET'])
@@ -25,15 +27,19 @@ def get_search_net():
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in netz if sub['network'] == network), None)
 	if res: 
-		return jsonify({"result": res})
+		return jsonify({"version": version,
+				  "result": res})
 	else:
-		return jsonify({"result": "Nothing here"}), 404
+		return jsonify({"version": version,
+				        "result": "Nothing here"}), 404
 
 
 @bp.route('/netz',methods=['GET'])
 @token_required('user')
 def get_netz():
-    return jsonify(netz)
+
+    return jsonify({"version": version,
+					"result": netz})
 
 @bp.route('/netz', methods=['POST'])
 def add_netz():

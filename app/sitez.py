@@ -2,7 +2,7 @@
 
 from flask import Flask, jsonify, request, Blueprint
 from app.security import token_required
-from app.db import sitez
+from app.db import sitez, version
 
 bp = Blueprint('sitez', __name__)
 
@@ -12,7 +12,8 @@ def get_site(param):
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in sitez if sub['id'] == param), None)
 	if res: 
-		return jsonify({"result": res})
+		return jsonify({"version": version,
+				        "result": res})
 	else:
 		return jsonify({"result": "Nothing here"}), 404
 
@@ -24,7 +25,8 @@ def get_search_site():
 	# https://www.geeksforgeeks.org/python-find-dictionary-matching-value-in-list/
 	res = next((sub for sub in sitez if sub['site'] == site), None)
 	if res: 
-		return jsonify({"result": res})
+		return jsonify({"version": version,
+				        "result": res})
 	else:
 		return jsonify({"result": "Nothing here"}), 404
 
@@ -32,7 +34,8 @@ def get_search_site():
 @bp.route('/sitez',methods=['GET'])
 @token_required('user')
 def get_netz():
-    return jsonify(sitez)
+    return jsonify({"version": version,
+				   "result":sitez})
 
 @bp.route('/sitez', methods=['POST'])
 def add_sitez():

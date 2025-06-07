@@ -1,7 +1,8 @@
 # db.py
 
-# password in plain text is "1q2w3e4r"
+version = '20250607T1245'
 
+# password in plain text is "1q2w3e4r"
 
 userz = {
     'nra': {
