@@ -24,7 +24,7 @@ netz = [
 ]
 
 sitez = [
-    { 'id': 1, 'site': 'RED', 'comment': 'bla' },
-    { 'id': 2, 'site': 'BLUE', 'comment': 'blabla' },
-    { 'id': 3, 'site': 'GREEN', 'comment': 'blablabla' },
+    { 'id': 1, 'site': 'RED', 'location': 'ALPHA','comment': 'bla' },
+    { 'id': 2, 'site': 'BLUE', 'location': 'BRAVO','comment': 'blabla' },
+    { 'id': 3, 'site': 'GREEN','location': 'ALPHA', 'comment': 'blablabla' },
 ]
