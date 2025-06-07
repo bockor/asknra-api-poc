@@ -14,10 +14,10 @@ def get_net(param):
 	res = next((sub for sub in netz if sub['id'] == param), None)
 	if res: 
 		return jsonify({"version": version,
-				        "result": res})
+						 "result": res})
 	else:
 		return jsonify({"version": version,
-				        "result": "Nothing here"}), 404
+						"result": "Nothing here"}), 404
 
 
 @bp.route('/net/search-net',methods=['GET'])
@@ -28,10 +28,10 @@ def get_search_net():
 	res = next((sub for sub in netz if sub['network'] == network), None)
 	if res: 
 		return jsonify({"version": version,
-				  "result": res})
+						"result": res})
 	else:
 		return jsonify({"version": version,
-				        "result": "Nothing here"}), 404
+						"result": "Nothing here"}), 404
 
 
 @bp.route('/netz',methods=['GET'])
